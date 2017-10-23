@@ -1,4 +1,4 @@
-# digits-snapshot-f17
+# digits-snapshot-f17-node-simpl-schema
 
 Here is a snapshot of the Digits code after completion of Part 6.  
 
