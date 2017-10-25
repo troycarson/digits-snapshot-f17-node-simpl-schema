@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating';
-import { ReactiveDict } from 'meteor/reactive-dict';
 import { _ } from 'meteor/underscore';
+import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Contacts, ContactsSchema } from '../../api/contacts/contacts.js';
 
@@ -17,11 +17,6 @@ Template.Add_Contact_Page.onCreated(function onCreated() {
 Template.Add_Contact_Page.helpers({
   errorClass() {
     return Template.instance().messageFlags.get(displayErrorMessages) ? 'error' : '';
-  },
-  fieldError(fieldName) {
-    const invalidKeys = Template.instance().context.invalidKeys();
-    const errorObject = _.find(invalidKeys, (keyObj) => keyObj.name === fieldName);
-    return errorObject && Template.instance().context.keyErrorMessage(errorObject.name);
   },
 });
 

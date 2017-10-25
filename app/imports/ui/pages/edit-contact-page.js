@@ -24,11 +24,6 @@ Template.Edit_Contact_Page.helpers({
   errorClass() {
     return Template.instance().messageFlags.get(displayErrorMessages) ? 'error' : '';
   },
-  fieldError(fieldName) {
-    const invalidKeys = Template.instance().context.invalidKeys();
-    const errorObject = _.find(invalidKeys, (keyObj) => keyObj.name === fieldName);
-    return errorObject && Template.instance().context.keyErrorMessage(errorObject.name);
-  },
 });
 
 
