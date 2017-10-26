@@ -1,6 +1,5 @@
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
-import { _ } from 'meteor/underscore';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Contacts, ContactsSchema } from '../../api/contacts/contacts.js';
 
@@ -51,6 +50,11 @@ Template.Edit_Contact_Page.events({
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
     }
+  },
+  'click.delete' (event, instance) {
+    event.preventDefault();
+    Contacts.remove(FlowRouter.getParam('_id'));
+    FlowRouter.go('Home_Page');
   },
 });
 

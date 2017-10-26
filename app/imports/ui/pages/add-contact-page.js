@@ -1,5 +1,4 @@
 import { Template } from 'meteor/templating';
-import { _ } from 'meteor/underscore';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Contacts, ContactsSchema } from '../../api/contacts/contacts.js';
@@ -19,7 +18,6 @@ Template.Add_Contact_Page.helpers({
     return Template.instance().messageFlags.get(displayErrorMessages) ? 'error' : '';
   },
 });
-
 
 Template.Add_Contact_Page.events({
   'submit .contact-data-form'(event, instance) {
